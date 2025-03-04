@@ -76,3 +76,24 @@ def get_question_type():
         else:
             #invalid input
             print("Invalid input, please enter 'multiple', 'boolean', or 'mixed'.")
+
+#GET request to OpenTDB API based on user input
+def get_trivia_questions(amount, category, difficulty, question_type):
+    #parameters
+    params = {
+        "amount": amount,
+        "category": category,
+        "difficulty": difficulty
+    }
+    #add type if user specifies between mixed or boolean
+    if question_type:
+        params["type"] = question_type[0]
+    #api request
+    response = requests.get(base_api_url, params=params)
+    #return questions
+    if response.status_code == 200:
+        return response.json()
+    else:
+        #error message
+        print("Error retrieving questions.")
+        return None
