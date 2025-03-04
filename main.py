@@ -62,3 +62,17 @@ def get_difficulty():
         else:
             print("Invalid difficulty. Please enter either 'easy' 'medium' or 'hard'.")
 
+#prompt user for question type
+def get_question_type():
+    while True:
+        #prompt user
+        question_type = input("Choose a question type: 'multiple' for multiple choice,\n 'boolean' for true/false, or 'mixed' for a mix of both: ").lower()
+        if question_type == 'mixed':
+            #api default, return nothing
+            return None
+        elif question_type in ['multiple', 'boolean']:
+            #return type
+            return [question_type]
+        else:
+            #invalid input
+            print("Invalid input, please enter 'multiple', 'boolean', or 'mixed'.")
