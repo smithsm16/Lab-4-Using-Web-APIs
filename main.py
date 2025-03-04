@@ -97,3 +97,11 @@ def get_trivia_questions(amount, category, difficulty, question_type):
         #error message
         print("Error retrieving questions.")
         return None
+
+#display question numbers
+def display_question_numbers(questions):
+    print("\nHere are the question numbers:")
+    #only display number to add some random fun
+    for i, question in enumerate(questions, 1):
+        print(i)
+
