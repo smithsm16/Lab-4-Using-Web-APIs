@@ -31,5 +31,23 @@ def get_num_questions():
             #invalid input
             print("Invalid input, please enter a valid number!")
 
+#prompt user for category
+def get_category(categories):
+    while True:
+        print("Here are the available categories:")
+        #display categories
+        for i, category in enumerate(categories, 1):
+            print(f"{i}. {category['name']}")
+        try:
+            #prompt user
+            category_choice = int(input("Enter the number of the category you'd like to choose: "))
+            if 0 <= category_choice < len(categories):
+                return categories[category_choice]['id']
+            else:
+                #invalid number
+                print("Invalid choice, please try again.")
+        except ValueError:
+            #invalid input
+            print("Invalid input, please select a number from the list!")
 
 
