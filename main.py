@@ -151,3 +151,11 @@ def get_answer():
         except ValueError:
             print("Invalid input, please select a valid number!")
 
+#display feedback
+def display_feedback(user_answer, correct_answer, answers):
+    #if correct
+    if answers[user_answer] == correct_answer:
+        print("Correct! Nice job!!")
+    #if incorrect
+    else:
+        print(f"Incorrect, nice try! The correct answer was: {correct_answer}")
