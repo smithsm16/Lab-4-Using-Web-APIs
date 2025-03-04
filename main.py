@@ -105,3 +105,18 @@ def display_question_numbers(questions):
     for i, question in enumerate(questions, 1):
         print(i)
 
+#prompt user for desired question
+def get_question(num_questions):
+    while True:
+        try:
+            #prompt user
+            question_choice = int(input(f"Which question from (1-{num_questions}) would you like to answer? "))
+            #valid input
+            if 0 <= question_choice <= num_questions:
+                return question_choice
+            #invalid number
+            else: print(f"Please select a valid question number between 1 and {num_questions}.")
+        #error
+        except ValueError:
+            print("Invalid input, please enter a valid number!")
+
