@@ -159,3 +159,15 @@ def display_feedback(user_answer, correct_answer, answers):
     #if incorrect
     else:
         print(f"Incorrect, nice try! The correct answer was: {correct_answer}")
+
+#prompt user if they would like to continue
+def continue_game():
+    while True:
+        #prompt user
+        choice = input("Would you like to 'C'ontinue with another question from this set,\n generate a 'N'ew set, or 'E'xit the game? ").lower()
+        #valid input
+        if choice in ['c', 'n', 'e']:
+            return choice
+        #invalid input
+        else:
+            print("Invalid choice. Please select either 'C', 'N', or 'E'.")
