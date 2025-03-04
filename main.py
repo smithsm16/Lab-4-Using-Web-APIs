@@ -50,4 +50,15 @@ def get_category(categories):
             #invalid input
             print("Invalid input, please select a number from the list!")
 
+#prompt user for difficulty_level
+def get_difficulty():
+    while True:
+        #prompt user
+        difficulty = input("Chose a difficulty (easy, medium, or hard): ").lower()
+        #valid input
+        if difficulty in ['easy', 'medium', 'hard']:
+            return difficulty
+        #invalid input
+        else:
+            print("Invalid difficulty. Please enter either 'easy' 'medium' or 'hard'.")
 
