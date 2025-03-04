@@ -8,3 +8,4 @@ insert challenges, questions, or tasks here
 3. There are 24 categories, but user can't select 24; fixed.
 4. Entering a 0 for question number choice will give you question 1; fixed.
 5. Entering 51 for number of questions will give you no error even though there is a max of 50 questions; fixed.
+6. If the user really wanted, they could select the same question over and over again; going to add a feature to drop the question from the set after it has been attempted.
