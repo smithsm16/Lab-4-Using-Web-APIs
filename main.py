@@ -1,4 +1,5 @@
 import requests
+import random
 
 base_api_url = "https://opentdb.com/api.php"
 categories_url = "https://opentdb.com/api_category.php"
@@ -119,4 +120,18 @@ def get_question(num_questions):
         #error
         except ValueError:
             print("Invalid input, please enter a valid number!")
+
+#display question
+def display_question(question_data):
+    #parse through api response
+    question = question_data["question"]
+    answers = question_data["incorrect_answers"] + [question_data["correct_answer"]]
+    #randomize answers
+    random.shuffle(answers)
+    #print question
+    print(f"\nQuestion: {question}")
+    #print answer choices
+    for i, answer in enumerate(answers, 1):
+        print(f"{i}. {answer}")
+    return answers, question_data["correct_answer"]
 
