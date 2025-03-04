@@ -135,3 +135,19 @@ def display_question(question_data):
         print(f"{i}. {answer}")
     return answers, question_data["correct_answer"]
 
+#prompt user for answer
+def get_answer():
+    while True:
+        try:
+            #prompt user
+            answer_choice = int(input("Chose an answer (1-4): ")) - 1
+            #valid input
+            if 0 <= answer_choice < 4:
+                return answer_choice
+            #invalid choice
+            else:
+                print("Please select a valid answer between 1 and 4.")
+        #error
+        except ValueError:
+            print("Invalid input, please select a valid number!")
+
